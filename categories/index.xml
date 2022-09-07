@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - Category - Kuma&#39;s site</title>
-        <link>https://github.com/qfxiongbin/kuma.github.io/categories/</link>
+        <link>/categories/</link>
         <description>Categories - Category - Kuma&#39;s site</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 04 Mar 2020 15:58:26 &#43;0800</lastBuildDate><atom:link href="https://github.com/qfxiongbin/kuma.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 04 Mar 2020 15:58:26 &#43;0800</lastBuildDate><atom:link href="/categories/" rel="self" type="application/rss+xml" /><item>
     <title>hugo</title>
-    <link>https://github.com/qfxiongbin/kuma.github.io/categories/hugo/</link>
+    <link>/categories/hugo/</link>
     <pubDate>Wed, 04 Mar 2020 15:58:26 &#43;0800</pubDate>
     <author>Brian Xiong</author>
-    <guid>https://github.com/qfxiongbin/kuma.github.io/categories/hugo/</guid>
+    <guid>/categories/hugo/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
