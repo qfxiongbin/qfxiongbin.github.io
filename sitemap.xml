@@ -2,6 +2,10 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/categories/</loc></url><url>
-            <loc>http://example.org/</loc></url><url>
-            <loc>http://example.org/tags/</loc></url></urlset>
+            <loc>https://github.com/qfxiongbin/kuma.github.io/categories/</loc><lastmod>2020-03-04T15:58:26&#43;08:00</lastmod></url><url>
+            <loc>https://github.com/qfxiongbin/kuma.github.io/categories/hugo/</loc><lastmod>2020-03-04T15:58:26&#43;08:00</lastmod></url><url>
+            <loc>https://github.com/qfxiongbin/kuma.github.io/</loc><lastmod>2020-03-04T15:58:26&#43;08:00</lastmod></url><url>
+            <loc>https://github.com/qfxiongbin/kuma.github.io/posts/</loc><lastmod>2020-03-04T15:58:26&#43;08:00</lastmod></url><url>
+            <loc>https://github.com/qfxiongbin/kuma.github.io/tags/</loc><lastmod>2020-03-04T15:58:26&#43;08:00</lastmod></url><url>
+            <loc>https://github.com/qfxiongbin/kuma.github.io/tags/test/</loc><lastmod>2020-03-04T15:58:26&#43;08:00</lastmod></url><url>
+            <loc>https://github.com/qfxiongbin/kuma.github.io/posts/first-post/</loc><lastmod>2020-03-04T15:58:26&#43;08:00</lastmod></url></urlset>
