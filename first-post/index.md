@@ -153,6 +153,9 @@ jobs:
 
   * API_TOKEN_GITHUB ：https://github.com/settings/profile，Settings/Developer settings 下Personal access tokens下创建。
 
+  创建完成后，同时需要添加到your githubname.github.io /settings/secrets/actions中，配置的Secret name 为API_TOKEN_GITHUB。
+
+![](/images/hugo005.png)
 
 
 ## 参考资料
