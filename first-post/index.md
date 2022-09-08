@@ -82,7 +82,76 @@ git clone https://github.com/xxx.git
 设置项目很多，第一次不必一下子配置好，先试着创建自己的第一篇博文，设置项可以后面慢慢研究。第一篇博文的内容可以参考exampleSite目录content中的示例。配置项很全，看一眼应该知道每个项目干啥用的。
 ## github action + page 部署
 
+需要在自己的github中创建两个仓库，一个用来管理站点源码，另外一个用来管理构建后的静态站点。
 
+创建仓库过程略过了。要特别说明的一点是，部署静态站点的仓库名称命名是**your githubname.github.io** 这样的格式。举个例子，我自己的名称是qfxiongbin.github.io。
+
+
+源码仓库中，需要设置action 脚本，每次本地推送时，会触发 action的 workflow,对增量内容进行构建，构建成功后，推送到your githubname.github.io仓库中，这个仓库中接收到推送内容后会触发gitpage action,大概过个几十秒，就会部署好，刷新页面就能看到最新的内容。
+
+## Github action 配置
+
+```
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          submodules: false # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Hugo setup
+        # You may pin to the exact commit or the version.
+        # uses: peaceiris/actions-hugo@2e89aa66d0093e4cd14751b3028fc1a179452c2e
+        uses: peaceiris/actions-hugo@v2.4.13
+        with:
+          # The Hugo version to download (if necessary) and use. Example: 0.58.2
+          hugo-version: latest # optional, default is latest
+          # Download (if necessary) and use Hugo extended version. Example: true
+          extended: false # optional, default is false
+
+      - name: Build
+        run: hugo
+
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: XXXXXX
+        with:
+          source-directory: "public"
+          destination-github-username: "qfxiongbin"
+          destination-repository-name: "qfxiongbin.github.io"
+          user-email: qfxiongbin@163.com
+
+```
+
+### 脚本说明
+
+  * 上面脚本中，最后三行需要配置成自己的，**destination-github-username** 、 **destination-repository-name(这个需要配置构建后的静态站点仓库名)**、**user-email**。
+
+  * API_TOKEN_GITHUB ：https://github.com/settings/profile，Settings/Developer settings 下Personal access tokens下创建。
 
 
 
