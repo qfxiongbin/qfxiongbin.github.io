@@ -3,7 +3,8 @@
         <title>所有文章 - kuma&#39;s site</title>
         <link>https://qfxiongbin.github.io/posts/</link>
         <description>所有文章 | kuma&#39;s site</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 08 Sep 2022 11:12:59 &#43;0800</lastBuildDate><atom:link href="https://qfxiongbin.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>qfxiongbin@gmail.com (Brian)</managingEditor>
+            <webMaster>qfxiongbin@gmail.com (Brian)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 08 Sep 2022 11:12:59 &#43;0800</lastBuildDate><atom:link href="https://qfxiongbin.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>主题文档 - 第一次使用Hugo搭建个人博客</title>
     <link>https://qfxiongbin.github.io/first-post/</link>
     <pubDate>Thu, 08 Sep 2022 11:12:59 &#43;0800</pubDate>
@@ -12,7 +13,7 @@
     <description><![CDATA[<!-- <a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.0" rel="noopener noreffer" target="_blank"></a> -->
 <p>搭建个人博客的初衷是想把以前零散的输出整理到一起，另外一个重要的原因是有很多想学、想做的事儿，当我开始做这些事儿后，过程中需要沉淀，无论是问题也好，成果也好，记录下来。
 我也有其他写作平台的账号，为什么还要自己搭建一个？</p>
-<p>很重要的一个原因是这块地方仅仅属于我自己，一切我说了算。本文对搭建过程做一下简单记录，对于一般的使用做一下说明。</p>]]></description>
+<p>就是想尝试一下，哈哈哈。</p>]]></description>
 </item>
 </channel>
 </rss>
