@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/qfxiongbin.github.io\/k8s%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/"
-        },"image": ["https:\/\/qfxiongbin.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "k8s","wordcount":  814 ,
+        },"image": ["https:\/\/qfxiongbin.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "k8s","wordcount":  1536 ,
         "url": "https:\/\/qfxiongbin.github.io\/k8s%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/","datePublished": "2022-09-18T11:41:59+08:00","dateModified": "2022-09-18T11:41:59+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/qfxiongbin.github.io\/images\/avatar.png"},"author": {
@@ -110,8 +110,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Kubernetes入门实战课学习笔记01</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/qfxiongbin" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Brian</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/k8s/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>k8s</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-18">2022-09-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 814 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/k8s%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="Kubernetes入门实战课学习笔记01">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-18">2022-09-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1536 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/k8s%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="Kubernetes入门实战课学习笔记01">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -129,6 +129,24 @@
       <ul>
         <li><a href="#docker-使用">docker 使用</a></li>
         <li><a href="#docker-架构">docker 架构</a></li>
+      </ul>
+    </li>
+    <li><a href="#容器container的本质">容器（Container）的本质</a>
+      <ul>
+        <li><a href="#通过拉取镜像alpine练习">通过拉取镜像Alpine练习</a></li>
+      </ul>
+    </li>
+    <li><a href="#容器与虚拟机的异同">容器与虚拟机的异同</a>
+      <ul>
+        <li><a href="#共同点">共同点</a></li>
+        <li><a href="#区别">区别</a></li>
+      </ul>
+    </li>
+    <li><a href="#容器的隔离机制是如何实现的">容器的隔离机制是如何实现的</a>
+      <ul>
+        <li><a href="#namespace">namespace</a></li>
+        <li><a href="#cgroup">cgroup</a></li>
+        <li><a href="#chroot">chroot</a></li>
       </ul>
     </li>
   </ul>
@@ -293,7 +311,87 @@
         alt="/images/dockerar.webp"
         title="/images/dockerar.webp" /></p>
 <p>上面的docker 相关的使用都是客户端中的行为，这些命令会与Docker Engine的后台服务 Docker daemon通信，客户端通过 build、pull、run等命令给Docker daemon发送请求，“大管家” Docker daemon负责从远端拉取镜像、本地存储镜像、从镜像生成容器和管理容器等功能。</p>
-<p>C/S架构实现了功能分离，利于分布式应用，客户端与服务端进行了解耦。</p></div><div class="post-footer" id="post-footer">
+<p>C/S架构实现了功能分离，利于分布式应用，客户端与服务端进行了解耦。</p>
+<h2 id="容器container的本质">容器（Container）的本质</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/container.webp"
+        data-srcset="/images/container.webp, /images/container.webp 1.5x, /images/container.webp 2x"
+        data-sizes="auto"
+        alt="/images/container.webp"
+        title="/images/container.webp" /></p>
+<p>集装箱的作用是标准化封装各种货物，打包完成后，可以从一个地方迁移到任意其他地方；计算机世界中，容器封装的是运行中应用的进程，它也会把进程与外部世界隔离开，让进程与外部系统互不影响。</p>
+<h3 id="通过拉取镜像alpine练习">通过拉取镜像Alpine练习</h3>
+<ul>
+<li>拉取镜像</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker pull alpine
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>运行</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker run -it alpine sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>tips: -it参数可以离开宿主机，进入容器内部</p>
+</blockquote>
+<p>在容器内部，我们执行<code>cat /etc/os-release</code>命令可以看到系统信息已经变成了Alpine Linux v3.16</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/ # cat /etc/os-release
+</span></span><span class="line"><span class="cl">NAME=&#34;Alpine Linux&#34;
+</span></span><span class="line"><span class="cl">ID=alpine
+</span></span><span class="line"><span class="cl">VERSION_ID=3.16.2
+</span></span><span class="line"><span class="cl">PRETTY_NAME=&#34;Alpine Linux v3.16&#34;
+</span></span><span class="line"><span class="cl">HOME_URL=&#34;https://alpinelinux.org/&#34;
+</span></span><span class="line"><span class="cl">BUG_REPORT_URL=&#34;https://gitlab.alpinelinux.org/alpine/aports/-/issues&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>容器就是一个特殊的隔离环境，它能够让进程只看到这个环境中的有限信息，不能对外界环境施加影响。通过容器技术，我们可以让程序运行在一个有严密防护的沙盒（sandbox）环境内。</p>
+<h2 id="容器与虚拟机的异同">容器与虚拟机的异同</h2>
+<h3 id="共同点">共同点</h3>
+<p>容器和虚拟机的目的都是为了隔离资源，保证系统安全，提高资源利用率。</p>
+<h3 id="区别">区别</h3>
+<ul>
+<li>
+<p>虚拟机
+虚拟化出来的是硬件，需要装操作系统后才能运行应用，比较重。会消耗大量的CPU、内存和硬盘等系统资源。每台虚拟机之间的隔离程度非常高，互相完全无干扰。</p>
+</li>
+<li>
+<p>容器</p>
+</li>
+</ul>
+<p>直接利用了下层计算机硬件和操作系统，运行效率非常高。</p>
+<h2 id="容器的隔离机制是如何实现的">容器的隔离机制是如何实现的</h2>
+<p>是基于Linux的 <strong>namespace、cgroup、chroot</strong>三个技术实现的。</p>
+<h3 id="namespace">namespace</h3>
+<p>2002年从Linux2.4.19开始出现，可以创建独立的文件系统、主机名、进程号、网络等资源，实现了系统全局资源和进程局部资源之间的隔离。相当于给进程盖了小板房。</p>
+<h3 id="cgroup">cgroup</h3>
+<p>Linux Control Group 是2008年从Linux2.6.24开始出现，作用是实现对进程的CPU、内存等资源的优先级和配合限制。相当于给小板房加了天花板。</p>
+<h3 id="chroot">chroot</h3>
+<p>早在1979年的UNIX V7就出现了，可以更改进程的根目录，限制访问文件系统。相当于给小板房铺了地板砖。</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
