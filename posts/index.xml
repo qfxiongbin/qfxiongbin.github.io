@@ -4,7 +4,15 @@
         <link>https://qfxiongbin.github.io/posts/</link>
         <description>所有文章 | kuma&#39;s site</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>qfxiongbin@gmail.com (Brian)</managingEditor>
-            <webMaster>qfxiongbin@gmail.com (Brian)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 08 Sep 2022 11:12:59 &#43;0800</lastBuildDate><atom:link href="https://qfxiongbin.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>qfxiongbin@gmail.com (Brian)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 18 Sep 2022 11:41:59 &#43;0800</lastBuildDate><atom:link href="https://qfxiongbin.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Kubernetes入门实战课学习笔记01</title>
+    <link>https://qfxiongbin.github.io/k8s%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Sun, 18 Sep 2022 11:41:59 &#43;0800</pubDate>
+    <author>Brian</author>
+    <guid>https://qfxiongbin.github.io/k8s%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[极客时间|罗剑锋的《Kubernetes入门实战课》学习笔记]]></description>
+</item>
+<item>
     <title>主题文档 - 第一次使用Hugo搭建个人博客</title>
     <link>https://qfxiongbin.github.io/first-post/</link>
     <pubDate>Thu, 08 Sep 2022 11:12:59 &#43;0800</pubDate>
