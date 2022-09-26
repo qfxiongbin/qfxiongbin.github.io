@@ -4,39 +4,39 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>Kubernetes入门实战课学习笔记02-docker - kuma&#39;s site</title><meta name="Description" content="极客时间|罗剑锋的《Kubernetes入门实战课》学习笔记-容器化应用"><meta property="og:title" content="Kubernetes入门实战课学习笔记02-docker" />
-<meta property="og:description" content="极客时间|罗剑锋的《Kubernetes入门实战课》学习笔记-容器化应用" />
+        <title>让你最快速地改善代码质量的20条编程规范 - kuma&#39;s site</title><meta name="Description" content="极客时间|《设计模式之美》专栏学习笔记"><meta property="og:title" content="让你最快速地改善代码质量的20条编程规范" />
+<meta property="og:description" content="极客时间|《设计模式之美》专栏学习笔记" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://qfxiongbin.github.io/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/" /><meta property="og:image" content="https://qfxiongbin.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-09-19T11:41:59+08:00" />
-<meta property="article:modified_time" content="2022-09-19T11:41:59+08:00" /><meta property="og:site_name" content="LoveIt" />
+<meta property="og:url" content="https://qfxiongbin.github.io/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" /><meta property="og:image" content="https://qfxiongbin.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-26T16:43:59+08:00" />
+<meta property="article:modified_time" content="2022-09-26T16:43:59+08:00" /><meta property="og:site_name" content="LoveIt" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qfxiongbin.github.io/logo.png"/>
 
-<meta name="twitter:title" content="Kubernetes入门实战课学习笔记02-docker"/>
-<meta name="twitter:description" content="极客时间|罗剑锋的《Kubernetes入门实战课》学习笔记-容器化应用"/>
+<meta name="twitter:title" content="让你最快速地改善代码质量的20条编程规范"/>
+<meta name="twitter:description" content="极客时间|《设计模式之美》专栏学习笔记"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://qfxiongbin.github.io/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/" /><link rel="prev" href="https://qfxiongbin.github.io/k8s%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><link rel="next" href="https://qfxiongbin.github.io/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://qfxiongbin.github.io/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" /><link rel="prev" href="https://qfxiongbin.github.io/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Kubernetes入门实战课学习笔记02-docker",
+        "headline": "让你最快速地改善代码质量的20条编程规范",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/qfxiongbin.github.io\/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker\/"
-        },"image": ["https:\/\/qfxiongbin.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "k8s","wordcount":  8 ,
-        "url": "https:\/\/qfxiongbin.github.io\/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker\/","datePublished": "2022-09-19T11:41:59+08:00","dateModified": "2022-09-19T11:41:59+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@id": "https:\/\/qfxiongbin.github.io\/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83\/"
+        },"image": ["https:\/\/qfxiongbin.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "design-pattern","wordcount":  889 ,
+        "url": "https:\/\/qfxiongbin.github.io\/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83\/","datePublished": "2022-09-26T16:43:59+08:00","dateModified": "2022-09-26T16:43:59+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/qfxiongbin.github.io\/images\/avatar.png"},"author": {
                 "@type": "Person",
                 "name": "Brian"
-            },"description": "极客时间|罗剑锋的《Kubernetes入门实战课》学习笔记-容器化应用"
+            },"description": "极客时间|《设计模式之美》专栏学习笔记"
     }
     </script></head>
     <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -62,7 +62,7 @@
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
                     <i class="fa fa-globe" aria-hidden="true"></i>                      
-                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/" selected>简体中文</option></select>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" selected>简体中文</option></select>
                 </a></div>
         </div>
     </div>
@@ -96,7 +96,7 @@
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
                     <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/" selected>简体中文</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" selected>简体中文</option></select>
                 </a></div>
     </div>
 </header><div class="search-dropdown desktop">
@@ -108,10 +108,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Kubernetes入门实战课学习笔记02-docker</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/qfxiongbin" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Brian</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/k8s/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>k8s</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-19">2022-09-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 8 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/" class="leancloud_visitors" data-flag-title="Kubernetes入门实战课学习笔记02-docker">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">让你最快速地改善代码质量的20条编程规范</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/qfxiongbin" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Brian</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/design-pattern/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>design-pattern</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-26">2022-09-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 889 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" class="leancloud_visitors" data-flag-title="让你最快速地改善代码质量的20条编程规范">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -119,38 +119,113 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><h1 id="什么是容器化应用">什么是容器化应用</h1>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/img_container.webp"
-        data-srcset="/images/img_container.webp, /images/img_container.webp 1.5x, /images/img_container.webp 2x"
-        data-sizes="auto"
-        alt="/images/img_container.webp"
-        title="/images/img_container.webp" /></p></div><div class="post-footer" id="post-footer">
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1命名多长合适">1、命名多长合适？</a></li>
+    <li><a href="#2利用上下文简化命名">2、利用上下文简化命名</a></li>
+    <li><a href="#3命名可读可搜索">3、命名可读、可搜索</a></li>
+    <li><a href="#4接口和抽象类命名">4、接口和抽象类命名</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>重复的事儿做久了，我就会让自己停下来，学习一下，只有站在巨人的肩膀上，才能省点劲儿。而不是一味地说，我以前做过xxx,因为以前的经验也可能是错的。</p>
+<p>这一篇是小争哥（前google工程师）在极客时间专栏《设计模式之美》专栏中根据他的工作经验给出的20条编程规范，整理出来自检。</p>
+<h1 id="命名与注释naming-and-comments">命名与注释（Naming and Comments）</h1>
+<p>完事开头难，做项目比较难的是起名字，项目名、类名、函数名、变量名、接口名都是我们平时开发时要考虑如何定义的。命名的好坏决定着代码的可读性。</p>
+<h2 id="1命名多长合适">1、命名多长合适？</h2>
+<p>在足够表达意图的情况下，命名越短越好；对于一些默认，大家比较熟悉的词，推荐使用缩写。比如 sec 表示second、str表示string、num表示number。除此之外，对于作用域比较小的变量，我们可以使用想对短的命名；对于类名这种作用域比较打的，更推荐使用长命名。</p>
+<p>命名的原则就是准确表达意图。命名时，假设自己不熟悉这块代码，从代码阅读者的角度去考量命名是否够直观。</p>
+<h2 id="2利用上下文简化命名">2、利用上下文简化命名</h2>
+<p>利用对象上下文可简化为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">public class User {
+</span></span><span class="line"><span class="cl">  private String userName;
+</span></span><span class="line"><span class="cl">  private String userPassword;
+</span></span><span class="line"><span class="cl">  private String userAvatarUrl;
+</span></span><span class="line"><span class="cl">  //...
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//简化为
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">public class User {
+</span></span><span class="line"><span class="cl">  private String name;
+</span></span><span class="line"><span class="cl">  private String password;
+</span></span><span class="line"><span class="cl">  private String avatarUrl;
+</span></span><span class="line"><span class="cl">  //...
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>利用函数上下文简化命名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">public void uploadUserAvatarImageToAliyun(String userAvatarImageUri);
+</span></span><span class="line"><span class="cl">//简化为
+</span></span><span class="line"><span class="cl">public void uploadUserAvatarImageToAliyun(String imageUri);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3命名可读可搜索">3、命名可读、可搜索</h2>
+<p>可读是指，不要用特别生僻、难发音的英文单词来命名；反例：plateaux、eyrie</p>
+<p>可搜索指，通过IDEA经常用“关键词联想”的方法自动补全和搜索，例如键入“.get”希望能找到某个对象所有get开头的方法。键入Array，搜索JDK中数组相关的类，命名时需要符合项目的规范，一起用selectXXX，insertXXX等，不要自己用queryXXX,addXXX</p>
+<h2 id="4接口和抽象类命名">4、接口和抽象类命名</h2>
+<p>对于接口一般有两种：</p>
+<ul>
+<li>加前缀“I”，表示Interface，比如IUserservice,对应的实现类为UserService</li>
+<li>不加前缀“I”,比如Userservice,对应实现类为UserServiceImpl</li>
+</ul>
+<p>抽象类也有两种：</p>
+<ul>
+<li>带Abstract 前缀,比如 AbstractConfiguration</li>
+<li>不带Abstract</li>
+</ul>
+<h1 id="代码风格code-style">代码风格（Code Style）</h1>
+<h1 id="编程技巧coding-tips">编程技巧（Coding Tips）</h1></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-09-19</span>
+                <span>更新于 2022-09-26</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://qfxiongbin.github.io/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/" data-title="Kubernetes入门实战课学习笔记02-docker" data-hashtags="k8s"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://qfxiongbin.github.io/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/" data-hashtag="k8s"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://qfxiongbin.github.io/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/" data-title="Kubernetes入门实战课学习笔记02-docker"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://qfxiongbin.github.io/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/" data-title="Kubernetes入门实战课学习笔记02-docker"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://qfxiongbin.github.io/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/" data-title="Kubernetes入门实战课学习笔记02-docker" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://qfxiongbin.github.io/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" data-title="让你最快速地改善代码质量的20条编程规范" data-hashtags="design-pattern"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://qfxiongbin.github.io/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" data-hashtag="design-pattern"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://qfxiongbin.github.io/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" data-title="让你最快速地改善代码质量的20条编程规范"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://qfxiongbin.github.io/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" data-title="让你最快速地改善代码质量的20条编程规范"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://qfxiongbin.github.io/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" data-title="让你最快速地改善代码质量的20条编程规范" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/k8s/">k8s</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/design-pattern/">design-pattern</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/k8s%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="prev" rel="prev" title="Kubernetes入门实战课学习笔记01"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Kubernetes入门实战课学习笔记01</a>
-            <a href="/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/" class="next" rel="next" title="让你最快速地改善代码质量的20条编程规范">让你最快速地改善代码质量的20条编程规范<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/" class="prev" rel="prev" title="Kubernetes入门实战课学习笔记02-docker"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Kubernetes入门实战课学习笔记02-docker</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
