@@ -4,9 +4,17 @@
         <link>https://qfxiongbin.github.io/</link>
         <description>Hugo theme - LoveIt</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>qfxiongbin@gmail.com (Brian)</managingEditor>
-            <webMaster>qfxiongbin@gmail.com (Brian)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 28 Sep 2022 15:43:59 &#43;0800</lastBuildDate>
+            <webMaster>qfxiongbin@gmail.com (Brian)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 09 Oct 2022 06:33:59 &#43;0800</lastBuildDate>
             <atom:link href="https://qfxiongbin.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>GIT QA</title>
+    <link>https://qfxiongbin.github.io/qa/</link>
+    <pubDate>Sun, 09 Oct 2022 06:33:59 &#43;0800</pubDate>
+    <author>Brian</author>
+    <guid>https://qfxiongbin.github.io/qa/</guid>
+    <description><![CDATA[常见问题及解决方案]]></description>
+</item>
+<item>
     <title>使用爱组搭实现阿里云OSS上传文件服务</title>
     <link>https://qfxiongbin.github.io/%E4%BD%BF%E7%94%A8%E7%88%B1%E7%BB%84%E6%90%AD%E5%AE%9E%E7%8E%B0%E9%98%BF%E9%87%8C%E4%BA%91oss%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/</link>
     <pubDate>Wed, 28 Sep 2022 15:43:59 &#43;0800</pubDate>
