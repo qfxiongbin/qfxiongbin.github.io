@@ -4,34 +4,34 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>GIT QA - kuma&#39;s site</title><meta name="Description" content="常见问题及解决方案"><meta property="og:title" content="GIT QA" />
+        <title>通过SSH的方式克隆github中的仓库 - kuma&#39;s site</title><meta name="Description" content="常见问题及解决方案"><meta property="og:title" content="通过SSH的方式克隆github中的仓库" />
 <meta property="og:description" content="常见问题及解决方案" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://qfxiongbin.github.io/qa/" /><meta property="og:image" content="https://qfxiongbin.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://qfxiongbin.github.io/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93/" /><meta property="og:image" content="https://qfxiongbin.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-09T06:33:59+08:00" />
-<meta property="article:modified_time" content="2022-10-09T06:40:44+08:00" /><meta property="og:site_name" content="LoveIt" />
+<meta property="article:modified_time" content="2022-10-09T06:33:59+08:00" /><meta property="og:site_name" content="LoveIt" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qfxiongbin.github.io/logo.png"/>
 
-<meta name="twitter:title" content="GIT QA"/>
+<meta name="twitter:title" content="通过SSH的方式克隆github中的仓库"/>
 <meta name="twitter:description" content="常见问题及解决方案"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://qfxiongbin.github.io/qa/" /><link rel="prev" href="https://qfxiongbin.github.io/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93/" /><link rel="next" href="https://qfxiongbin.github.io/%E4%BD%BF%E7%94%A8apache-http-client-%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://qfxiongbin.github.io/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93/" /><link rel="prev" href="https://qfxiongbin.github.io/%E4%BD%BF%E7%94%A8%E7%88%B1%E7%BB%84%E6%90%AD%E5%AE%9E%E7%8E%B0%E9%98%BF%E9%87%8C%E4%BA%91oss%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/" /><link rel="next" href="https://qfxiongbin.github.io/qa/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "GIT QA",
+        "headline": "通过SSH的方式克隆github中的仓库",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/qfxiongbin.github.io\/qa\/"
-        },"image": ["https:\/\/qfxiongbin.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "git","wordcount":  80 ,
-        "url": "https:\/\/qfxiongbin.github.io\/qa\/","datePublished": "2022-10-09T06:33:59+08:00","dateModified": "2022-10-09T06:40:44+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@id": "https:\/\/qfxiongbin.github.io\/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93\/"
+        },"image": ["https:\/\/qfxiongbin.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "git","wordcount":  232 ,
+        "url": "https:\/\/qfxiongbin.github.io\/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93\/","datePublished": "2022-10-09T06:33:59+08:00","dateModified": "2022-10-09T06:33:59+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/qfxiongbin.github.io\/images\/avatar.png"},"author": {
                 "@type": "Person",
@@ -62,7 +62,7 @@
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
                     <i class="fa fa-globe" aria-hidden="true"></i>                      
-                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/qa/" selected>简体中文</option></select>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93/" selected>简体中文</option></select>
                 </a></div>
         </div>
     </div>
@@ -96,7 +96,7 @@
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
                     <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/qa/" selected>简体中文</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93/" selected>简体中文</option></select>
                 </a></div>
     </div>
 </header><div class="search-dropdown desktop">
@@ -108,10 +108,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">GIT QA</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">通过SSH的方式克隆github中的仓库</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/qfxiongbin" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Brian</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/git/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>git</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-10-09">2022-10-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 80 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/qa/" class="leancloud_visitors" data-flag-title="GIT QA">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-10-09">2022-10-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 232 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93/" class="leancloud_visitors" data-flag-title="通过SSH的方式克隆github中的仓库">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -119,24 +119,59 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p>GIT是我目前最常用的版本管理工具，使用过程中还是会遇到一些小问题，这些问题都是因为配置不当等导致。记录下来，释放大脑内存。</p>
-<ul>
-<li>fatal: unable to access &lsquo;xxx&rsquo;: OpenSSL SSL_read: Connection was reset, errno 10054</li>
-</ul>
-<blockquote>
-<p>SOL: git config &ndash;global http.sslVerify &ldquo;false&rdquo;</p>
-</blockquote></div><div class="post-footer" id="post-footer">
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#步骤1">步骤1</a></li>
+    <li><a href="#步骤2">步骤2</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>在macOS上我想克隆自己的github中的仓库，刚开始使用的是https的方式在本地执行clone命令，发现输入用户密码后，一直报一个403的错误。</p>
+<p>换成SSH的方式就没有这个问题，但需要提前做一些配置，主要步骤如下：</p>
+<h2 id="步骤1">步骤1</h2>
+<p>本地生成SSH key</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ssh-keygen -t rsa -C &#39;youmail&#39;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">三次回车
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">查看复制key
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat ～/.ssh/id_isa.pub
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">从ssh-rsa字符开始复制，到邮箱地址字符结束
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="步骤2">步骤2</h2>
+<p>在github中创建sshkey ，并将上面本地创建的key复制到github的配置中</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/githubsshkey.png"
+        data-srcset="/images/githubsshkey.png, /images/githubsshkey.png 1.5x, /images/githubsshkey.png 2x"
+        data-sizes="auto"
+        alt="/images/githubsshkey.png"
+        title="/images/githubsshkey.png" /></p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-10-09&nbsp;<a class="git-hash" href="https://github.com/qfxiongbin/commit/effb107d435b3f8d07917cb60cfc1b15cfa5d987" target="_blank" title="commit by BrianX(qfxiongbin@163.com) effb107d435b3f8d07917cb60cfc1b15cfa5d987: add : git qa">
-                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>effb107</a></span>
+                <span>更新于 2022-10-09</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://qfxiongbin.github.io/qa/" data-title="GIT QA" data-hashtags="git"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://qfxiongbin.github.io/qa/" data-hashtag="git"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://qfxiongbin.github.io/qa/" data-title="GIT QA"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://qfxiongbin.github.io/qa/" data-title="GIT QA"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://qfxiongbin.github.io/qa/" data-title="GIT QA" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://qfxiongbin.github.io/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93/" data-title="通过SSH的方式克隆github中的仓库" data-hashtags="git"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://qfxiongbin.github.io/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93/" data-hashtag="git"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://qfxiongbin.github.io/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93/" data-title="通过SSH的方式克隆github中的仓库"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://qfxiongbin.github.io/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93/" data-title="通过SSH的方式克隆github中的仓库"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://qfxiongbin.github.io/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93/" data-title="通过SSH的方式克隆github中的仓库" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -148,8 +183,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/git-ssh%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%8B%E9%9A%86github%E4%B8%AD%E7%9A%84%E4%BB%93%E5%BA%93/" class="prev" rel="prev" title="通过SSH的方式克隆github中的仓库"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>通过SSH的方式克隆github中的仓库</a>
-            <a href="/%E4%BD%BF%E7%94%A8apache-http-client-%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/" class="next" rel="next" title="使用Apache Http Client上传文件">使用Apache Http Client上传文件<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/%E4%BD%BF%E7%94%A8%E7%88%B1%E7%BB%84%E6%90%AD%E5%AE%9E%E7%8E%B0%E9%98%BF%E9%87%8C%E4%BA%91oss%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/" class="prev" rel="prev" title="使用爱组搭实现阿里云OSS上传文件服务"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>使用爱组搭实现阿里云OSS上传文件服务</a>
+            <a href="/qa/" class="next" rel="next" title="GIT QA">GIT QA<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
