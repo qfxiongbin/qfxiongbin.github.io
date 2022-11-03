@@ -4,7 +4,15 @@
         <link>https://qfxiongbin.github.io/posts/</link>
         <description>所有文章 | kuma&#39;s site</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>qfxiongbin@gmail.com (Brian)</managingEditor>
-            <webMaster>qfxiongbin@gmail.com (Brian)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 09 Oct 2022 06:43:59 &#43;0800</lastBuildDate><atom:link href="https://qfxiongbin.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>qfxiongbin@gmail.com (Brian)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 03 Nov 2022 16:20:59 &#43;0800</lastBuildDate><atom:link href="https://qfxiongbin.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>“一个swraggerui的类型转换的错误&#34;</title>
+    <link>https://qfxiongbin.github.io/%E4%B8%80%E4%B8%AAswraggerui%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E7%9A%84%E9%94%99%E8%AF%AF/</link>
+    <pubDate>Thu, 03 Nov 2022 16:20:59 &#43;0800</pubDate>
+    <author>Brian</author>
+    <guid>https://qfxiongbin.github.io/%E4%B8%80%E4%B8%AAswraggerui%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E7%9A%84%E9%94%99%E8%AF%AF/</guid>
+    <description><![CDATA[项目问题总结]]></description>
+</item>
+<item>
     <title>使用Apache Http Client上传文件</title>
     <link>https://qfxiongbin.github.io/%E4%BD%BF%E7%94%A8apache-http-client-%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/</link>
     <pubDate>Sun, 09 Oct 2022 06:43:59 &#43;0800</pubDate>
