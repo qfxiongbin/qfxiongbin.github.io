@@ -110,7 +110,7 @@ java.lang.NumberFormatException: For input string: ""
 
 可以找到这个类，打上断点，debug模式启动，刷新swaggerui的接口页面进行观察。
 
-![](/static/images/1667465170829.jpg)
+![](/images/1667465170829.jpg)
 
 在type = "integer"时，传入的值是空，进入到标记的这个分支中做类型转换时，肯定会报错。
 
