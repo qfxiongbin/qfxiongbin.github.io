@@ -4,7 +4,15 @@
         <link>https://qfxiongbin.github.io/posts/</link>
         <description>所有文章 | kuma&#39;s site</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>qfxiongbin@gmail.com (Brian)</managingEditor>
-            <webMaster>qfxiongbin@gmail.com (Brian)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 07 Nov 2022 12:12:59 &#43;0800</lastBuildDate><atom:link href="https://qfxiongbin.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>qfxiongbin@gmail.com (Brian)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 13 Nov 2022 12:12:59 &#43;0800</lastBuildDate><atom:link href="https://qfxiongbin.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>MySQL常见问题整理</title>
+    <link>https://qfxiongbin.github.io/qa/</link>
+    <pubDate>Sun, 13 Nov 2022 12:12:59 &#43;0800</pubDate>
+    <author>Brian</author>
+    <guid>https://qfxiongbin.github.io/qa/</guid>
+    <description><![CDATA[<!-- <a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.0" rel="noopener noreffer" target="_blank"></a> -->]]></description>
+</item>
+<item>
     <title>Mac上目前为止用过的最好用的SSH工具RoyalTSX工具</title>
     <link>https://qfxiongbin.github.io/royaltsx/</link>
     <pubDate>Mon, 07 Nov 2022 12:12:59 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>Brian</author>
     <guid>https://qfxiongbin.github.io/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</guid>
     <description><![CDATA[极客时间|《设计模式之美》专栏学习笔记]]></description>
-</item>
-<item>
-    <title>Kubernetes入门实战课学习笔记02-docker</title>
-    <link>https://qfxiongbin.github.io/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/</link>
-    <pubDate>Mon, 19 Sep 2022 11:41:59 &#43;0800</pubDate>
-    <author>Brian</author>
-    <guid>https://qfxiongbin.github.io/k8s%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0-docker/</guid>
-    <description><![CDATA[极客时间|罗剑锋的《Kubernetes入门实战课》学习笔记-容器化应用]]></description>
 </item>
 </channel>
 </rss>
