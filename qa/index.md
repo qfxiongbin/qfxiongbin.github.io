@@ -37,4 +37,40 @@ mysql    27114 11456 40 7月20 ?       47-06:58:41 /www/server/mysql/bin/mysqld 
 将 11456 与 27114 kill
 重启，正常启动
 
+## 更新大批量数据 提示Lock wait timeout exceeded; try restarting transaction
 
+等待时间超时导致。
+
+```
+ 
+ 有时候看看show engine innodb status , 并结合 show full processlist;能暂时解决问题；但一直不能精确定位；
+
+在5.5中，information_schema库中增加了三个关于锁的表（MEMORY引擎）；
+
+innodb_trx ## 当前运行的所有事务
+
+innodb_locks ## 当前出现的锁
+
+innodb_lock_waits ## 锁等待的对应关系
+
+数据库配置文件修改：
+原因：原因是你使用的InnoDB  表类型的时候,
+
+默认参数:innodb_lock_wait_timeout设置锁等待的时间是50s,
+
+因为有的锁等待超过了这个时间,所以抱错.
+
+你可以把这个时间加长,或者优化存储过程,事务避免过长时间的等待.
+
+解决的办法有两个：
+
+第一：innodb_lock_wait_timeout 锁定等待时间改大
+
+my.ini文件：
+
+#innodb_lock_wait_timeout = 50
+
+修改为
+
+innodb_lock_wait_timeout = 500
+```

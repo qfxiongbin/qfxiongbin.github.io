@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qfxiongbin.github.io/qa/" /><meta property="og:image" content="https://qfxiongbin.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-13T12:12:59+08:00" />
-<meta property="article:modified_time" content="2022-11-13T19:38:07+08:00" /><meta property="og:site_name" content="LoveIt" />
+<meta property="article:modified_time" content="2022-11-13T19:56:46+08:00" /><meta property="og:site_name" content="LoveIt" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qfxiongbin.github.io/logo.png"/>
@@ -30,8 +30,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/qfxiongbin.github.io\/qa\/"
-        },"image": ["https:\/\/qfxiongbin.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "MySQL","wordcount":  275 ,
-        "url": "https:\/\/qfxiongbin.github.io\/qa\/","datePublished": "2022-11-13T12:12:59+08:00","dateModified": "2022-11-13T19:38:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+        },"image": ["https:\/\/qfxiongbin.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "MySQL","wordcount":  647 ,
+        "url": "https:\/\/qfxiongbin.github.io\/qa\/","datePublished": "2022-11-13T12:12:59+08:00","dateModified": "2022-11-13T19:56:46+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/qfxiongbin.github.io\/images\/avatar.png"},"author": {
                 "@type": "Person",
@@ -110,8 +110,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">MySQL常见问题整理</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/qfxiongbin" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Brian</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/mysql/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>MySQL</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-13">2022-11-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 275 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/qa/" class="leancloud_visitors" data-flag-title="MySQL常见问题整理">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-13">2022-11-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 647 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/qa/" class="leancloud_visitors" data-flag-title="MySQL常见问题整理">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -122,6 +122,7 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#无法重启">无法重启</a></li>
+    <li><a href="#更新大批量数据-提示lock-wait-timeout-exceeded-try-restarting-transaction">更新大批量数据 提示Lock wait timeout exceeded; try restarting transaction</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><!-- <a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.0" rel="noopener noreffer" target="_blank"><img
@@ -184,12 +185,83 @@
 <p>解决</p>
 </blockquote>
 <p>将 11456 与 27114 kill
-重启，正常启动</p></div><div class="post-footer" id="post-footer">
+重启，正常启动</p>
+<h2 id="更新大批量数据-提示lock-wait-timeout-exceeded-try-restarting-transaction">更新大批量数据 提示Lock wait timeout exceeded; try restarting transaction</h2>
+<p>等待时间超时导致。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"> 有时候看看show engine innodb status , 并结合 show full processlist;能暂时解决问题；但一直不能精确定位；
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">在5.5中，information_schema库中增加了三个关于锁的表（MEMORY引擎）；
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">innodb_trx ## 当前运行的所有事务
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">innodb_locks ## 当前出现的锁
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">innodb_lock_waits ## 锁等待的对应关系
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">数据库配置文件修改：
+</span></span><span class="line"><span class="cl">原因：原因是你使用的InnoDB  表类型的时候,
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">默认参数:innodb_lock_wait_timeout设置锁等待的时间是50s,
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">因为有的锁等待超过了这个时间,所以抱错.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">你可以把这个时间加长,或者优化存储过程,事务避免过长时间的等待.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">解决的办法有两个：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">第一：innodb_lock_wait_timeout 锁定等待时间改大
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">my.ini文件：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">#innodb_lock_wait_timeout = 50
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">修改为
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">innodb_lock_wait_timeout = 500
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-11-13&nbsp;<a class="git-hash" href="https://github.com/qfxiongbin/commit/e35f6fe87550e17a84600e2d05438f2b43e1da1e" target="_blank" title="commit by qfxiongbin(qfxiongbin@163.com) e35f6fe87550e17a84600e2d05438f2b43e1da1e: mysql qa 无法重启">
-                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>e35f6fe</a></span>
+                <span>更新于 2022-11-13&nbsp;<a class="git-hash" href="https://github.com/qfxiongbin/commit/23f63f13f64b5baedb6d3dcba93efb8740f465df" target="_blank" title="commit by qfxiongbin(qfxiongbin@163.com) 23f63f13f64b5baedb6d3dcba93efb8740f465df: mysql  更新大批量数据 提示Lock wait timeout exceeded; try restarting transaction">
+                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>23f63f1</a></span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
