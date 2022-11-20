@@ -4,7 +4,15 @@
         <link>https://qfxiongbin.github.io/posts/</link>
         <description>所有文章 | kuma&#39;s site</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>qfxiongbin@gmail.com (Brian)</managingEditor>
-            <webMaster>qfxiongbin@gmail.com (Brian)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 13 Nov 2022 12:12:59 &#43;0800</lastBuildDate><atom:link href="https://qfxiongbin.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>qfxiongbin@gmail.com (Brian)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 20 Nov 2022 16:15:59 &#43;0800</lastBuildDate><atom:link href="https://qfxiongbin.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>macOS 降低node版本</title>
+    <link>https://qfxiongbin.github.io/nodejs-qa/</link>
+    <pubDate>Sun, 20 Nov 2022 16:15:59 &#43;0800</pubDate>
+    <author>Brian</author>
+    <guid>https://qfxiongbin.github.io/nodejs-qa/</guid>
+    <description><![CDATA[node js 常见问题（mac版本）]]></description>
+</item>
+<item>
     <title>MySQL常见问题整理</title>
     <link>https://qfxiongbin.github.io/qa/</link>
     <pubDate>Sun, 13 Nov 2022 12:12:59 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>Brian</author>
     <guid>https://qfxiongbin.github.io/%E4%BD%BF%E7%94%A8%E7%88%B1%E7%BB%84%E6%90%AD%E5%AE%9E%E7%8E%B0%E9%98%BF%E9%87%8C%E4%BA%91oss%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/</guid>
     <description><![CDATA[工作记录，使用爱组搭]]></description>
-</item>
-<item>
-    <title>让你最快速地改善代码质量的20条编程规范</title>
-    <link>https://qfxiongbin.github.io/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</link>
-    <pubDate>Mon, 26 Sep 2022 16:43:59 &#43;0800</pubDate>
-    <author>Brian</author>
-    <guid>https://qfxiongbin.github.io/%E8%AE%A9%E4%BD%A0%E5%BF%AB%E9%80%9F%E6%94%B9%E5%96%84%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%9A%8420%E6%9D%A1%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</guid>
-    <description><![CDATA[极客时间|《设计模式之美》专栏学习笔记]]></description>
 </item>
 </channel>
 </rss>
