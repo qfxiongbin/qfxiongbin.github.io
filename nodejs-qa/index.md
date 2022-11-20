@@ -41,3 +41,11 @@ To list all files that would be deleted:
 ```
   brew link --overwrite node@14
 ```
+
+## npm ERR! node-sass@6.0.0 postinstall: `node scripts/build.js`
+
+一个比较老的vue项目中，用到了 node-sass。在windows环境中运行正常。现在我在mac上做开发，这个项目有些问题需要解决，安装node依赖各种报错。尝试了网上说的各种办法，无果。
+
+解决过程中，我想到mac上有一个vue项目是可以正常运行的，就看了一下package.json中node-sass 是什么版本，结果发现，这个项目引入的是  "sass": "^1.39.0"。
+
+我抱着试一试的心态把前一个启动不了的项目中的node-sass替换成sass，依赖安装成功。
